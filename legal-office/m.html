@@ -10,12 +10,17 @@
 <body>
 <div class="wrap">
   <div>
-    <p>390 × 844 (iPhone 14) — 상단: 앱, 하단: 같은 앱을 320px로 축소</p>
-    <div class="phone"><iframe id="a" src="./index.html" title="mobile 390"></iframe></div>
+    <p>390 × 844 (iPhone 14) — 왼쪽: 앱, 오른쪽: 같은 앱 320px</p>
+    <div class="phone"><iframe id="a" title="mobile 390"></iframe></div>
   </div>
   <div>
     <p>320 × 700 (SE)</p>
-    <div class="phone" style="width:320px;height:700px"><iframe id="b" src="./index.html" title="mobile 320" style="width:320px;height:700px"></iframe></div>
+    <div class="phone" style="width:320px;height:700px"><iframe id="b" title="mobile 320" style="width:320px;height:700px"></iframe></div>
   </div>
 </div>
+<script>
+  var v = new URLSearchParams(location.search).get('v') || Date.now();
+  document.getElementById('a').src = './index.html?v=' + v;
+  document.getElementById('b').src = './index.html?v=' + v;
+</script>
 </body></html>
